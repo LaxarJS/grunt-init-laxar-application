@@ -1,0 +1,42 @@
+{
+   "layout": "one_column",
+
+   "areas": {
+      "activities": [
+         {
+            "widget": "path/my_first_activity",
+            "id": "myFirstActivity"
+            "features": {
+            }
+         }
+      ],
+
+      "header": [
+         {
+            "widget": "path/my_header_widget",
+            "id": "headerWithRainbows",
+            "features": {
+               "rainbows": {
+                  "enabled": true
+               }
+            }
+         }
+      ],
+
+      "content": [
+      ],
+
+      "footer": [
+         {
+            "widget": "path/my_footer_widget",
+            "id": "footerWithUnicorns",
+            "features": {
+               "unicorns": {
+                  "enabled": true,
+                  "count": 3
+               }
+            }
+         }
+      ]
+   }
+}

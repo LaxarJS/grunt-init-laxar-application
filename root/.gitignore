@@ -1,0 +1,8 @@
+.idea
+atlassian-ide-plugin.xml
+*.orig
+.sass-cache
+/var
+/node_modules
+*.backup.json
+{%= name %}-*.zip

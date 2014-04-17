@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import "layout";
+
+.one-column-layout {
+   &.container,
+   .ax-header,
+   .ax-content,
+   .ax-footer {
+      position: relative;
+   }
+
+   .ax-footer {
+      margin-top: $unitVertical;
+   }
+}

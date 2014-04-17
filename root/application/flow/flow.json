@@ -1,0 +1,23 @@
+{
+   "places": {
+      "entry": {
+         "redirectTo": "page1"
+      },
+
+      "page1": {
+         "page":  "page1",
+         "targets": {
+            "cancel": "entry",
+            "next": "page2"
+         }
+      },
+
+      "page2": {
+         "page":  "page2",
+         "targets": {
+            "cancel": "entry",
+            "previous": "page1"
+         }
+      }
+   }
+}
