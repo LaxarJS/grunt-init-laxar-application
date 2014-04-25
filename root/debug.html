@@ -17,7 +17,6 @@
    <![endif]-->
 
    <style>
-
       #pageblocker {
          z-index: 100;
          position: fixed;
@@ -27,21 +26,22 @@
          height: 100%;
          background-color: white;
       }
-
    </style>
 </head>
 
 <body>
    <div id="pageblocker" data-ax-page-fade></div>
-
    <div data-ng-view style="display: none"></div>
-
    <div data-ax-page></div>
 
    <script src="application/application.js"></script>
    <script src="require_config.js"></script>
-   <script src="bower_components/requirejs/require.js"></script>
-   <script src="var/build/optimized_init.js"></script>
+
+   <!--
+      the path in data-main is relative to the base url configured in require_configuration.js and thus
+      should always point to includes/
+   -->
+   <script data-main="../init.js" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>
 
