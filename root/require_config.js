@@ -77,6 +77,8 @@ var require = {
       'angular-mocks': 'angular-mocks/angular-mocks',
       'angular-route': 'angular-route/angular-route',
       'angular-sanitize': 'angular-sanitize/angular-sanitize',
+      jjv: '../bower_components/jjv/lib/jjv',
+      jjve: '../bower_components/jjve/jjve',
 
       // LaxarJS Core Testing:
       jasmine: 'jasmine/lib/jasmine-core/jasmine',
