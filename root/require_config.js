@@ -38,6 +38,9 @@ var require = {
             return angular;
          }
       },
+      'json-patch': {
+         exports: 'jsonpatch'
+      },
       underscore: {
          exports: '_',
          init: function () {
@@ -77,8 +80,8 @@ var require = {
       'angular-mocks': 'angular-mocks/angular-mocks',
       'angular-route': 'angular-route/angular-route',
       'angular-sanitize': 'angular-sanitize/angular-sanitize',
-      jjv: '../bower_components/jjv/lib/jjv',
-      jjve: '../bower_components/jjve/jjve',
+      jjv: 'jjv/lib/jjv',
+      jjve: 'jjve/jjve',
 
       // LaxarJS Core Testing:
       jasmine: 'jasmine/lib/jasmine-core/jasmine',
@@ -88,7 +91,10 @@ var require = {
       text: 'requirejs-plugins/lib/text',
       json: 'requirejs-plugins/src/json',
 
-      // UIKit:
+      // LaxarJS Patterns:
+      'json-patch': 'fast-json-patch/src/json-patch-duplex',
+
+      // LaxarJS UIKit:
       jquery_ui: 'jquery_ui',
       'bootstrap-tooltip': 'bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip',
       trunk8: 'trunk8/trunk8',
