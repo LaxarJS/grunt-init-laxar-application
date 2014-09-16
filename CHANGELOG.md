@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+## v0.2.1
+
 - [#8](https://github.com/LaxarJS/grunt-init-laxar-application/issues/8): fixed wrongly global assert in jshintrc.
 
 
