@@ -96,7 +96,7 @@ var require = {
 
       // LaxarJS UIKit:
       jquery_ui: 'jquery_ui',
-      'bootstrap-tooltip': 'bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip',
+      'bootstrap-tooltip': 'bootstrap-sass-official/assets/javascripts/bootstrap/tooltip',
       trunk8: 'trunk8/trunk8',
 
       // App Parts:
