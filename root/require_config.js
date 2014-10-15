@@ -95,7 +95,7 @@ var require = {
       'json-patch': 'fast-json-patch/src/json-patch-duplex',
 
       // LaxarJS UIKit:
-      jquery_ui: 'jquery_ui',
+      jquery_ui: 'jquery_ui/ui',
       'bootstrap-tooltip': 'bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip',
       trunk8: 'trunk8/trunk8',
 
