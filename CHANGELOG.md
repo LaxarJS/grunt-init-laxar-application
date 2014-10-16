@@ -2,6 +2,11 @@
 
 ## Last Changes
 
+- [#12](https://github.com/LaxarJS/grunt-init-laxar-application/issues/12): Added path to bootstrap affix control
+
+
+## v0.2.2
+
 - [#11](https://github.com/LaxarJS/grunt-init-laxar-application/issues/11): Updated require config for tests and new bootstrap version.
 
 
