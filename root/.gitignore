@@ -4,5 +4,6 @@ atlassian-ide-plugin.xml
 .sass-cache
 /var
 /node_modules
+/bower_components
 *.backup.json
 {%= name %}-*.zip
