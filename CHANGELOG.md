@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#15](https://github.com/LaxarJS/grunt-init-laxar-application/issues/15): Updated `grunt-laxar` to a recent version (`v0.5.1`)
 - [#14](https://github.com/LaxarJS/grunt-init-laxar-application/issues/14): Added `bower_components` to .gitignore
 - [#6](https://github.com/LaxarJS/grunt-init-laxar-application/issues/6): Use application title as HTML page title
 - [#7](https://github.com/LaxarJS/grunt-init-laxar-application/issues/7): Changed default locale to en-US
