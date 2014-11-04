@@ -14,6 +14,12 @@ function toCamelCase( string ) {
    } );
 }
 
+function toSentenceCase( string ) {
+   return string.replace( /(^|_|-)([a-z])/g, function( x, y, initial ) {
+      return ( y ? ' ' : '' ) + initial.toUpperCase();
+   } );
+}
+
 function toTitleCase( string ) {
    return string.replace( /(^|[_-]|([a-z]))([A-Za-z])/, function( x, y, last, initial ) {
       return ( last ? last + ' ' : '' ) + initial.toUpperCase();
@@ -58,7 +64,8 @@ module.exports = function prompts( options, init, callback ) {
       extend( init.prompt( 'title' ), {
          message: typeTitle + ' title',
          default: function( value, props, done ) {
-            done( null, toCamelCase( stripType( props.name, type ) ) + ( isApp ? '' : typeTitle ) );
+            var title = isApp ? toSentenceCase( props.name ) : ( toCamelCase( stripType( props.name, type ) ) + typeTitle );
+            done( null, title );
          }
       } ),
       init.prompt( 'description', 'My new LaxarJS ' + type ),
