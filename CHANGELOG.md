@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#7](https://github.com/LaxarJS/grunt-init-laxar-application/issues/7): Changed default locale to en-US
 - [#12](https://github.com/LaxarJS/grunt-init-laxar-application/issues/12): Added path to bootstrap affix control
 - [#11](https://github.com/LaxarJS/grunt-init-laxar-application/issues/11): Updated require config for tests and new bootstrap version
 - [#10](https://github.com/LaxarJS/grunt-init-laxar-application/issues/10): Adjusted RequireJS configuration after jQuery UI update.
