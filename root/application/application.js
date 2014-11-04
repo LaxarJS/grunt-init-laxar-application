@@ -5,9 +5,7 @@ window.laxar = {
    theme: 'default',
 
    locales: {
-      'default': 'de_DE',
-      // for i18n-demos:
-      'alternative': 'en_US'
+      'default': 'en-US',
    },
 
    logThreshold: 'DEVELOP',
