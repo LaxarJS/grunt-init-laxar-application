@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v0.3.0
+
 - [#17](https://github.com/LaxarJS/grunt-init-laxar-application/issues/17): application.js: Added missing `'use strict'` declaration
 - [#16](https://github.com/LaxarJS/grunt-init-laxar-application/issues/16): updated and simplified application.js, Gruntfile.js and .html files, dropped support for MSIE8
 - [#15](https://github.com/LaxarJS/grunt-init-laxar-application/issues/15): Updated `grunt-laxar` to a recent version (`v0.5.1`)
