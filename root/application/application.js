@@ -1,21 +1,33 @@
-window.laxar = {
-   name: '{%= name %}',
-   description: '{%= description %}',
+// See https://github.com/LaxarJS/laxar/blob/master/docs/manuals/configuration.md
+window.laxar = ( function() {
 
-   theme: 'default',
+   var modeAttribute = 'data-ax-application-mode';
+   var mode = document.querySelector( 'script[' + modeAttribute + ']' ).getAttribute( modeAttribute );
 
-   locales: {
-      'default': 'en-US',
-   },
+   return {
+      name: '{%= name %}',
+      description: '{%= description %}',
 
-   logThreshold: 'DEVELOP',
+      portal: {
+         theme: 'default',
+         useMergedCss: mode === 'RELEASE'
+      },
 
-   // relative to laxar-path-root
-   fileListings: {
-      'bower_components/laxar_uikit/themes': 'var/listing/laxar_uikit_themes.json',
-      'bower_components/laxar_uikit/controls': 'var/listing/laxar_uikit_controls.json',
-      'includes/themes': 'var/listing/includes_themes.json',
-      'includes/widgets': 'var/listing/includes_widgets.json',
-      'application/layouts': 'var/listing/application_layouts.json'
-   }
-};
+      file_resource_provider: {
+         fileListings: {
+            'application': 'var/listing/application_resources.json',
+            'bower_components': 'var/listing/bower_components_resources.json',
+            'includes': 'var/listing/includes_resources.json'
+         },
+         useEmbedded: mode === 'RELEASE'
+      },
+
+      i18n: {
+         locales: {
+            'default': 'en'
+         }
+      }
+
+   };
+
+} )();
