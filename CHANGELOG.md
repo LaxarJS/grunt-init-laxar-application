@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#18](https://github.com/LaxarJS/grunt-init-laxar-application/issues/18): performance: move theme CSS to header
+
 
 ## v0.3.0
 
