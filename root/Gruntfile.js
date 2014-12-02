@@ -111,29 +111,36 @@ module.exports = function( grunt ) {
          }
       },
       watch: {
-         options:  {
-            livereload: liveReloadPort
+         options: {
+            livereload: liveReloadPort,
+            reload: true
          },
          Gruntfile: {
-            files: __filename,
-            options: {
-               /* reload Grunt config */
-               reload: true
-            }
+            files: __filename
          },
          application: {
-            files: [ '<%= directory_tree.application.src %>' ],
-            tasks: [ 'directory_tree:application' ],
+            files: [
+               'application/**/!(scss)/*.*'
+            ]
+         },
+         libraries: {
+            files: [
+               'includes/lib/*/!(bower_components|node_modules)/**',
+               'includes/themes/*.theme/!(bower_components|node_modules)/**'
+            ]
+         },
+         dependencies: {
+            files: [
+               '<%= directory_tree.application.src %>',
+               '<%= directory_tree.includes.src %>'
+            ],
+            tasks: [
+               'directory_tree:application',
+               'directory_tree:includes',
+               'portal_angular_dependencies'
+            ],
             options: {
                event: [ 'added', 'deleted' ]
-            }
-         },
-         includes: {
-            files: [ '<%= directory_tree.includes.src %>' ],
-            tasks: [ 'directory_tree:includes' ],
-            options: {
-               event: [ 'added', 'deleted' ],
-               reload: true
             }
          }
       }
