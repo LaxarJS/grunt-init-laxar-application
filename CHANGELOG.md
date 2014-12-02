@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#19](https://github.com/LaxarJS/grunt-init-laxar-application/issues/19): Gruntfile: fixed watcher configuration
+
 
 ## v0.3.0
 
