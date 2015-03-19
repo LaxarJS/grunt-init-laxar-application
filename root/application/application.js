@@ -27,6 +27,10 @@ window.laxar = ( function() {
          locales: {
             'default': 'en'
          }
+      },
+
+      event_bus: {
+         timeout_ms: (mode === 'RELEASE' ? 120 : 10) * 1000
       }
 
    };
