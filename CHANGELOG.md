@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#23](https://github.com/LaxarJS/grunt-init-laxar-application/issues/23): require_config: added jquery dependency shims for trunk8 and bootstrap components
 - [#21](https://github.com/LaxarJS/grunt-init-laxar-application/issues/21): require_config: reintroduced es5-shim for PhantomJS
 
 
