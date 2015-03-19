@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v0.4.0
+
 - [#22](https://github.com/LaxarJS/grunt-init-laxar-application/issues/22): package.json: bumped grunt-laxar dependency to latest `0.x`
 - [#20](https://github.com/LaxarJS/grunt-init-laxar-application/issues/20): configuration: made event bus timeout depend on development/production mode: 10s/120s
 - [#23](https://github.com/LaxarJS/grunt-init-laxar-application/issues/23): require_config: added jquery dependency shims for trunk8 and bootstrap components
