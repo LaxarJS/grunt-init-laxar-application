@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#21](https://github.com/LaxarJS/grunt-init-laxar-application/issues/21): require_config: reintroduced es5-shim for PhantomJS
 - [#19](https://github.com/LaxarJS/grunt-init-laxar-application/issues/19): Gruntfile: fixed watcher configuration
 - [#18](https://github.com/LaxarJS/grunt-init-laxar-application/issues/18): performance: move theme CSS to header
 
