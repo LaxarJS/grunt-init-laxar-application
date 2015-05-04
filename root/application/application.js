@@ -8,31 +8,20 @@ window.laxar = ( function() {
    return {
       name: '{%= name %}',
       description: '{%= description %}',
+      theme: 'default',
 
-      portal: {
-         theme: 'default',
-         useMergedCss: mode === 'RELEASE'
+      widgets: {
+         // put your widgets' global ax.configuration.get( ... ) options here
       },
 
-      file_resource_provider: {
-         fileListings: {
-            'application': 'var/listing/application_resources.json',
-            'bower_components': 'var/listing/bower_components_resources.json',
-            'includes': 'var/listing/includes_resources.json'
-         },
-         useEmbedded: mode === 'RELEASE'
-      },
-
-      i18n: {
-         locales: {
-            'default': 'en'
-         }
-      },
-
-      event_bus: {
-         timeout_ms: (mode === 'RELEASE' ? 120 : 10) * 1000
+      useEmbeddedFileListings: mode === 'PRODUCTION',
+      useMergedCss: mode === 'PRODUCTION',
+      eventBusTimeoutMs: (mode === 'PRODUCTION' ? 120 : 10) * 1000,
+      fileListings: {
+         'application': 'var/listing/application_resources.json',
+         'bower_components': 'var/listing/bower_components_resources.json',
+         'includes': 'var/listing/includes_resources.json'
       }
-
    };
 
 } )();

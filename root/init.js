@@ -4,10 +4,10 @@
  * {%= homepage %}{% } %}
  */
 require( [
-   'portal_angular_dependencies',
+   'laxar-application-dependencies',
    'laxar'
-], function( widgetModules, ax ) {
+], function( applicationModules, ax ) {
    'use strict';
 
-   ax.bootstrap( widgetModules );
+   ax.bootstrap( applicationModules );
 } );

@@ -4,20 +4,17 @@
    "areas": {
       "activities": [
          {
-            "widget": "path/my_first_activity",
-            "id": "myFirstActivity"
-            "features": {
-            }
+            "widget": "category/my-first-activity"
          }
       ],
 
       "header": [
          {
-            "widget": "path/my_header_widget",
-            "id": "headerWithRainbows",
+            "widget": "laxarjs/ax-headline-widget",
             "features": {
-               "rainbows": {
-                  "enabled": true
+               "headline": {
+                  "i18nHtmlText": "For <em>Great</em> Success!",
+                  "level": 2
                }
             }
          }
@@ -28,8 +25,8 @@
 
       "footer": [
          {
-            "widget": "path/my_footer_widget",
-            "id": "footerWithUnicorns",
+            "widget": "category/my-rare-footer-widget",
+            "id": "iCanHazAnId",
             "features": {
                "unicorns": {
                   "enabled": true,

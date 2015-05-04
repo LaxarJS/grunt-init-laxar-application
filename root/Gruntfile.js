@@ -10,6 +10,7 @@ module.exports = function( grunt ) {
    var path = require( 'path' );
 
    var serverPort = {%= laxar_port %};
+   var testPort = 1000 + serverPort;
    var liveReloadPort = 30000 + serverPort;
 
    grunt.initConfig( {
@@ -18,11 +19,24 @@ module.exports = function( grunt ) {
          options: {
             port: serverPort
          },
-         default: {}
+         default: {},
+         test: {
+            options: {
+               port: testPort
+            }
+         }
       },
       jshint: {
          options: {
             jshintrc: __dirname + '/.jshintrc'
+         }
+      },
+      karma: {
+         options: {
+            reporters: [ 'progress', 'junit' ],
+            proxies: {
+               '/base': 'http://localhost:' + testPort
+            }
          }
       },
       compress: {
@@ -39,22 +53,35 @@ module.exports = function( grunt ) {
                   'includes/+(controls|lib|themes|widgets)/**',
                   'static/**',
                   'var/**',
-                  '!includes/**/+(bower_components|node_modules)/**'
+                  '!includes/lib/**/+(bower_components|node_modules)/**',
+                  '!includes/themes/**/+(bower_components|node_modules)/**'
                ],
                filter: 'isFile'
             } ]
          }
       },
-      portal_angular_dependencies: {
+      laxar_application_dependencies: {
          default: {
             options: {},
-            dest: 'var/static/portal_angular_dependencies.js',
+            dest: 'var/static/laxar_application_dependencies.js',
             src: [ 'application/flow/*.json' ]
          }
       },
       css_merger: {
          default: {
             src: [ 'application/flow/*.json' ]
+         }
+      },
+      cssmin: {
+         default: {
+            options: {
+               keepSpecialComments: 0
+            },
+            files: [ {
+               expand: true,
+               src: 'var/static/css/*.theme.css',
+               ext: '.theme.css'
+            } ]
          }
       },
       directory_tree: {
@@ -137,7 +164,7 @@ module.exports = function( grunt ) {
             tasks: [
                'directory_tree:application',
                'directory_tree:includes',
-               'portal_angular_dependencies'
+               'laxar_application_dependencies'
             ],
             options: {
                event: [ 'added', 'deleted' ]
@@ -157,20 +184,21 @@ module.exports = function( grunt ) {
          grunt.config( 'watch.' + widget, {
             files: [
                widget + '/!(bower_components|node_modules)',
-               widget + '/!(bower_components|node_modules)/**'
+               widget + '/!(bower_components|node_modules)/**',
+               '!' + widget + '/test-results.xml'
             ]
          } );
       } );
 
    grunt.loadNpmTasks( 'grunt-laxar' );
-   grunt.loadNpmTasks( 'grunt-contrib-compass' );
+   grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
    grunt.loadNpmTasks( 'grunt-contrib-compress' );
    grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
-   grunt.registerTask( 'server', [ 'connect' ] );
-   grunt.registerTask( 'build', [ 'directory_tree', 'portal_angular_dependencies' ] );
-   grunt.registerTask( 'optimize', [ 'build', 'css_merger', 'requirejs' ] );
-   grunt.registerTask( 'test', [ 'server', 'widgets' ] );
+   grunt.registerTask( 'server', [ 'connect:default' ] );
+   grunt.registerTask( 'build', [ 'directory_tree', 'laxar_application_dependencies' ] );
+   grunt.registerTask( 'optimize', [ 'build', 'css_merger', 'cssmin', 'requirejs' ] );
+   grunt.registerTask( 'test', [ 'connect:test', 'widgets' ] );
    grunt.registerTask( 'default', [ 'build', 'test' ] );
    grunt.registerTask( 'dist', [ 'optimize', 'compress' ] );
    grunt.registerTask( 'start', [ 'build', 'server', 'watch' ] );
