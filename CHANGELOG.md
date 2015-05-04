@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v1.0.0-alpha.0
+
 - [#25](https://github.com/LaxarJS/grunt-init-laxar-application/issues/25): optimize: require fetching less javascript files
      + NEW FEATURE: see ticket for details
 - [#24](https://github.com/LaxarJS/grunt-init-laxar-application/issues/24): modernized template to adjust for upcoming LaxarJS v1.0.0
