@@ -127,12 +127,22 @@ module.exports = function( grunt ) {
             }
          }
       },
+      concat: {
+         build: {
+            src: [
+               'require_config.js',
+               'bower_components/requirejs/require.js'
+            ],
+            dest: 'var/build/require_configured.js'
+         }
+      },
       requirejs: {
          default: {
             options: {
                mainConfigFile: 'require_config.js',
+               deps: [ '../var/build/require_configured' ],
                name: '../init',
-               out: 'var/build/optimized_init.js',
+               out: 'var/build/bundle.js',
                optimize: 'uglify2'
             }
          }
@@ -185,19 +195,21 @@ module.exports = function( grunt ) {
             files: [
                widget + '/!(bower_components|node_modules)',
                widget + '/!(bower_components|node_modules)/**',
-               '!' + widget + '/test-results.xml'
+               '!' + widget + '/test-results.xml',
+               '!' + widget + '/**/*.scss'
             ]
          } );
       } );
 
    grunt.loadNpmTasks( 'grunt-laxar' );
    grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+   grunt.loadNpmTasks( 'grunt-contrib-concat' );
    grunt.loadNpmTasks( 'grunt-contrib-compress' );
    grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
    grunt.registerTask( 'server', [ 'connect:default' ] );
    grunt.registerTask( 'build', [ 'directory_tree', 'laxar_application_dependencies' ] );
-   grunt.registerTask( 'optimize', [ 'build', 'css_merger', 'cssmin', 'requirejs' ] );
+   grunt.registerTask( 'optimize', [ 'build', 'css_merger', 'cssmin', 'concat', 'requirejs' ] );
    grunt.registerTask( 'test', [ 'connect:test', 'widgets' ] );
    grunt.registerTask( 'default', [ 'build', 'test' ] );
    grunt.registerTask( 'dist', [ 'optimize', 'compress' ] );
