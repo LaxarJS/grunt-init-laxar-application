@@ -1,5 +1,5 @@
 /**
- * Copyright 2014 aixigo AG
+ * Copyright 2015 aixigo AG
  * Released under the MIT license.
  * http://laxarjs.org/license
  */
@@ -78,17 +78,7 @@ module.exports = function prompts( options, init, callback ) {
       } ),
       init.prompt( 'homepage' ),
       init.prompt( 'author_name' ),
-      init.prompt( 'version' ),
-      {
-         name: 'laxar_version',
-         message: 'LaxarJS version',
-         default: '0.x',
-         validator: function( range ) {
-            /* grunt-init tests validator.length */
-            return semver.validRange( range );
-         },
-         warning: 'Must be a valid semantic version range descriptor.'
-      }
+      init.prompt( 'version', '0.1.0-pre' )
    ];
 
    if( isApp ) {

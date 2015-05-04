@@ -1,5 +1,5 @@
 /**
- * Copyright 2014 aixigo AG
+ * Copyright 2015 aixigo AG
  * Released under the MIT license.
  * http://laxarjs.org/license
  */
@@ -9,18 +9,19 @@
 exports.description = 'Create a LaxarJS application';
 
 // Template-specific notes to be displayed before question prompts.
-exports.notes = 'For more information about LaxarJS application best practices, ' +
-  'please see the docs at http://laxarjs.org/docs/applications';
+exports.notes = 'For more information about getting started with your LaxarJS ' +
+  'application, please see the docs at ' +
+  'https://github.com/LaxarJS/laxar/blob/master/README.md';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You can now start developing your application!' +
   '\n\n' +
-  'Before getting started, run _npm install_ to fetch some dependencies. ' +
+  'Before getting started, run _npm install_ to get tools and dependencies. ' +
   'After that, you can run _npm start_ to start your application. To find ' +
-  'out more about developing applications with LaxarJS, please see the ' +
-  'Getting Started guide:' +
+  'out more about developing applications with LaxarJS, please have a look at ' +
+  'the manuals:' +
   '\n\n' +
-  'http://laxarjs.org/docs/getting-started';
+  'https://github.com/LaxarJS/laxar/blob/master/docs/manuals/index.md';
 
 // Any existing file or directory matching this wildcard will cause a warning.
 exports.warnOn = '*';

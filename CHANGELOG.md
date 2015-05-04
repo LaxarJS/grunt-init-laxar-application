@@ -3,6 +3,12 @@
 ## Last Changes
 
 
+## v1.0.0-alpha.0
+
+- [#24](https://github.com/LaxarJS/grunt-init-laxar-application/issues/24): modernized template to adjust for upcoming LaxarJS v1.0.0
+     + NEW FEATURE: see ticket for details
+
+
 ## v0.4.0
 
 - [#22](https://github.com/LaxarJS/grunt-init-laxar-application/issues/22): package.json: bumped grunt-laxar dependency to latest `0.x`
