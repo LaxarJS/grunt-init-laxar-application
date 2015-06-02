@@ -1,0 +1,22 @@
+{
+   "layout": "two-columns",
+
+   "areas": {
+      "activities": [
+      ],
+
+      "footer": [
+         {
+            "widget": "example/my-navigation-widget",
+            "features": {
+               "links": [
+                  {
+                     "target": "next",
+                     "htmlLabel": "Next Page <i class='fa fa-angle-double-right' />"
+                  }
+               ]
+            }
+         }
+      ]
+   }
+}

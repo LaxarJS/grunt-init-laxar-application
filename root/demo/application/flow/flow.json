@@ -1,0 +1,23 @@
+{
+   "places": {
+      "entry": {
+         "redirectTo": "welcome"
+      },
+
+      "welcome": {
+         "page":  "example1",
+         "targets": {
+            "home": "entry",
+            "next": "otherPlace"
+         }
+      },
+
+      "otherPlace": {
+         "page":  "example2",
+         "targets": {
+            "restart": "entry",
+            "previous": "welcome"
+         }
+      }
+   }
+}

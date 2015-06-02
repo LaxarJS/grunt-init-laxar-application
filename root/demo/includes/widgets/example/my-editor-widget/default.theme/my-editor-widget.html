@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+   <div class="panel-heading">
+      <h3 class="panel-title">A simple editor widget</h3>
+   </div>
+   <div class="panel-body">
+      <p>This widget publishes events whenever its document resource is changed.</p>
+      <form class="form-horizontal">
+         <div class="form-group">
+            <label ax-for="'title'" class="col-lg-2 control-label">Title</label>
+            <div class="col-lg-10">
+               <input ax-id="'title'" ng-model="model.htmlTitle"
+                      type="text" class="form-control">
+            </div>
+         </div>
+         <div class="form-group">
+            <label ax-for="'text'" class="col-lg-2 control-label">Body</label>
+            <div class="col-lg-10">
+               <textarea ax-id="'text'" ng-model="model.htmlText" class="form-control" rows="6"></textarea>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
+
+<p class="alert alert-info">
+   <i class="fa fa-info-circle"></i>
+   To change this, edit <em>examples/my-editor-widget</em>
+   under <em>includes/widgets</em>
+</p>

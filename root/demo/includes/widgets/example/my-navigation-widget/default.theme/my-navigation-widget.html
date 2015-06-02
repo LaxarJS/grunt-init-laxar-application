@@ -1,0 +1,21 @@
+<h4>
+   A Navigation Widget
+   <button type="button" class="btn btn-xs btn-primary pull-right"
+           ng-repeat="button in features.buttons"
+           ng-click="handleClick( button )"
+           ng-bind-html="button.htmlLabel">
+   </button>
+</h4>
+
+<p>
+   <a ng-repeat="link in links"
+      ng-href="{{ link.href }}"
+      ng-bind-html="link.htmlLabel">
+   </a>
+</p>
+
+<p class="alert alert-info">
+   <i class="fa fa-info-circle"></i>
+   To change this, edit the widget <em>examples/my-navigation-widget</em>
+   under <em>includes/widgets</em>
+</p>

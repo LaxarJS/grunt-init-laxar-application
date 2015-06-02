@@ -1,0 +1,9 @@
+/**
+ * Copyright 2015 aixigo AG
+ * Released under the MIT license.
+ */
+@charset "UTF-8";
+
+.my-editor-widget .panel-body {
+   min-height: 275px;
+}
