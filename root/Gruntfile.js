@@ -199,7 +199,7 @@ module.exports = function( grunt ) {
       .forEach( configureArtifact.bind( null, 'control' ) );
 
    function configureArtifact( type, artifact ) {
-      var config = grunt.config( type + '.' + artifact );
+      var config = grunt.config( type + '.' + artifact ) || {};
       config.karma = config.karma || { junitReporter: { outputFile: artifact + '/test-results.xml' } };
       grunt.config( type + '.' + artifact, config );
 
