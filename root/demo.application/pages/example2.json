@@ -1,0 +1,50 @@
+{
+   "layout": "two-columns",
+
+   "areas": {
+      "activities": [
+      ],
+
+      "left": [
+         {
+            "widget": "example/my-editor-widget",
+            "features": {
+               "document": {
+                  "resource": "explanation"
+               }
+            }
+         }
+      ],
+
+      "right": [
+         {
+            "widget": "example/my-viewer-widget",
+            "features": {
+               "document": {
+                  "resource": "explanation"
+               }
+            }
+         }
+      ],
+
+      "footer": [
+         {
+            "widget": "example/my-navigation-widget",
+            "features": {
+               "links": [
+                  {
+                     "target": "previous",
+                     "htmlLabel": "<i class='fa fa-angle-double-left'></i> Previous Page"
+                  }
+               ],
+               "buttons": [
+                  {
+                     "target": "restart",
+                     "htmlLabel": "<i class='fa fa-cycle'></i> Restart"
+                  }
+               ]
+            }
+         }
+      ]
+   }
+}

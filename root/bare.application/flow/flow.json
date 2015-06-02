@@ -1,0 +1,13 @@
+{
+   "places": {
+      "entry": {
+         "redirectTo": "home"
+      },
+
+      "home": {
+         "page":  "home",
+         "targets": {
+         }
+      }
+   }
+}

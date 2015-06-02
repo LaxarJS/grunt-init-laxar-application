@@ -16,12 +16,7 @@ window.laxar = ( function() {
 
       useEmbeddedFileListings: mode === 'PRODUCTION',
       useMergedCss: mode === 'PRODUCTION',
-      eventBusTimeoutMs: (mode === 'PRODUCTION' ? 120 : 10) * 1000,
-      fileListings: {
-         'application': 'var/listing/application_resources.json',
-         'bower_components': 'var/listing/bower_components_resources.json',
-         'includes': 'var/listing/includes_resources.json'
-      }
+      eventBusTimeoutMs: (mode === 'PRODUCTION' ? 120 : 10) * 1000
    };
 
 } )();

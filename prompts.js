@@ -41,15 +41,12 @@ function stripType( string, type ) {
    return string.replace( new RegExp( '[-_]' + type + '$', 'i' ), '' );
 }
 
-/**
- * Default prompts for Widgets, Activities, etc.
- */
+
 module.exports = function prompts( options, init, callback ) {
    var type = options.type;
    var typeTitle = toTitleCase( type );
 
    var isApp = /application$/.test(type);
-   var isWidget = /(widget|activity)$/.test(type);
 
    var promptList = [
       extend( init.prompt( 'name' ), {
@@ -78,43 +75,25 @@ module.exports = function prompts( options, init, callback ) {
       } ),
       init.prompt( 'homepage' ),
       init.prompt( 'author_name' ),
-      init.prompt( 'version', '0.1.0-pre' )
-   ];
-
-   if( isApp ) {
-      promptList.push( {
+      init.prompt( 'version', '0.1.0-pre' ),
+      {
          name: 'laxar_port',
          message: 'Development server port',
          default: 8000,
          validator: /\d+/,
          warning: 'Must be a valid HTTP port number'
-      } );
-   }
-   else if( isWidget ) {
-      /**
-       * Ask for the widget namespace first.
-       */
-      promptList.unshift( {
-         name: 'namespace',
-         message: typeTitle + ' namespace',
-         default: function( value, props, done ) {
-            var directory = path.dirname( process.cwd() ).split( path.sep );
-            var index = directory.indexOf( 'widgets' );
-            if( index < 0 ) {
-               done( null, 'widgets.' + directory.pop() );
-            } else {
-               done( null, directory.splice( index ).join( '.' ) );
-            }
+      },
+      {
+         name: 'generate_example',
+         message: 'Should a set of example widgets be generated? (Y/n)',
+         default: 'Y',
+         validator: /y(es)?|no?/i,
+         warning: 'Either yes (Y) or no (N)',
+         sanitize: function( value, props, done ) {
+            done( null, value.toLowerCase().indexOf( 'y' ) === 0 );
          }
-      } );
-
-      promptList.push( {
-         name: 'laxar_integration',
-         message: 'Integration type',
-         default: 'angular',
-         warning: 'Must be a valid LaxarJS widget integration type.'
-      } );
-   }
+      }
+   ];
 
    return promptList;
 };

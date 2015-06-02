@@ -1,4 +1,2 @@
 {
-  "activity.js": "{%= name %}_{%= type %}.js",
-  "spec/activity_spec.js": "spec/{%= name %}_{%= type %}_spec.js"
 }
