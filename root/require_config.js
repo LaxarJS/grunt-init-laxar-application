@@ -14,6 +14,7 @@ var require = {
 
       // LaxarJS Core (tests only):
       'laxar/laxar_testing': 'laxar/dist/laxar_testing',
+      jquery: 'jquery/dist/jquery',
       jasmine: 'jasmine/lib/jasmine-core/jasmine',
       q_mock: 'q_mock/q',
 
@@ -70,6 +71,10 @@ var require = {
             'use strict';
             return angular;
          }
+      },
+      // LaxarJS Patterns
+      'json-patch': {
+         exports: 'jsonpatch'
       }
    }
 };

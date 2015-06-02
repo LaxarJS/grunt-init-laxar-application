@@ -5,6 +5,7 @@
 
 ## v1.0.0-beta.0
 
+- [#28](https://github.com/LaxarJS/grunt-init-laxar-application/issues/28): fixed configuration
 - [#26](https://github.com/LaxarJS/grunt-init-laxar-application/issues/26): modernized template to adjust for remaining LaxarJS v1.0.0 changes
      + NEW FEATURE: see ticket for details
 
