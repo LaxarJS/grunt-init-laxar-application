@@ -37,17 +37,26 @@ exports.template = function( grunt, init, done ) {
       // Files to copy (and process).
       var files = init.filesToCopy( props );
 
-      if( props.author_name === 'aixigo AG' && props.licenses[0] === 'MIT' ) {
-      } else {
-         init.addLicenseFiles(files, props.licenses);
-      }
+      init.addLicenseFiles( files, props.licenses );
 
       // Actually copy (and process) files.
       init.copyAndProcess( files, props );
 
+      // Keep either bare.* or demo.* folders, and rename them appropriately
+      var keepPrefix = props.generate_example ? 'demo.' : 'bare.';
+      var removePrefix = props.generate_example ? 'bare.' : 'demo.';
+      [ 'application', 'includes' ].forEach( function( folderName ) {
+         if( grunt.file.exists( removePrefix + folderName ) ) {
+            grunt.file.delete( removePrefix + folderName );
+         }
+         if( grunt.file.exists( keepPrefix + folderName ) ) {
+            require( 'fs' ).renameSync( keepPrefix + folderName, folderName );
+         }
+      } );
+
       // All done!
       done();
 
-   });
+   } );
 
 };

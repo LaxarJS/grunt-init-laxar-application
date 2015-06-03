@@ -10,7 +10,7 @@
       }
    %}
    "dependencies": {
-      "laxar": "~1.0.0-beta.0",
+      "laxar": "~1.0.0-beta.1",
       "laxar-uikit": "~1.0.0-beta.0",
       "laxar-patterns": "~1.0.0-beta.0"
    },
