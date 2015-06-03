@@ -3,15 +3,3 @@
    position: relative;
    margin: 20px;
 }
-
-
-.two-columns-layout .bs-callout {
-   margin: 20px 0;
-   padding: 15px 30px 15px 15px;
-   border-left: 5px solid #d0e3f0;
-   background-color: #f0f7fd;
-}
-
-.two-columns-layout .ax-footer {
-   margin-top: 20px
-}

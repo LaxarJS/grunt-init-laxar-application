@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#29](https://github.com/LaxarJS/grunt-init-laxar-application/issues/29): improved template HTML and CSS
 - [#27](https://github.com/LaxarJS/grunt-init-laxar-application/issues/27): template can now generate a set of example widgets
 - [#28](https://github.com/LaxarJS/grunt-init-laxar-application/issues/28): fixed configuration
 
