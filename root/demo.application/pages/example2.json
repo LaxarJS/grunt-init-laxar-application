@@ -40,7 +40,7 @@
                "buttons": [
                   {
                      "target": "restart",
-                     "htmlLabel": "<i class='fa fa-cycle'></i> Restart"
+                     "htmlLabel": "<i class='fa fa-times-circle'></i> Cancel"
                   }
                ]
             }
