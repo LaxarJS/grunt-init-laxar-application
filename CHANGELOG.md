@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#31](https://github.com/LaxarJS/grunt-init-laxar-application/issues/31): added missing license
+
 
 ## v1.0.1
 
