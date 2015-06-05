@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v1.0.1
+
 - [#30](https://github.com/LaxarJS/grunt-init-laxar-application/issues/30): fixed broken link
 
 
