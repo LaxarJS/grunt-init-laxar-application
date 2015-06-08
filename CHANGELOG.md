@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#32](https://github.com/LaxarJS/grunt-init-laxar-application/issues/32): Gruntfile: fixed embedding of control descriptors into listings
 - [#31](https://github.com/LaxarJS/grunt-init-laxar-application/issues/31): added missing license
 - [#30](https://github.com/LaxarJS/grunt-init-laxar-application/issues/30): fixed broken link
 
