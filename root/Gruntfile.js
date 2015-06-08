@@ -110,7 +110,8 @@ module.exports = function( grunt ) {
             ],
             options: {
                embedContents: [
-                  'bower_components/laxar-uikit/dist/controls/*/control.json'
+                  'bower_components/laxar-uikit/dist/controls/*/control.json',
+                  'bower_components/laxar-*-control/control.json'
                ]
             }
          },
