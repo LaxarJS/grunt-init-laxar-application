@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#32](https://github.com/LaxarJS/grunt-init-laxar-application/issues/32): Gruntfile: fixed embedding of control descriptors into listings
+
 
 ## v1.0.2
 
