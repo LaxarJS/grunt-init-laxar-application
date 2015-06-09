@@ -14,8 +14,8 @@ define( [
 
    var defaults = {
       htmlTitle: 'A document resource',
-      htmlText: 'This resource is shared by two widgets using the LaxarJS <em>Event-Bus</em>.'
-                + '\n\n<b>Try editing</b> the resource contents!'
+      htmlText: 'This resource is shared by two widgets using the LaxarJS <em>Event-Bus</em>.' +
+                '\n\n<b>Try editing</b> the resource contents!'
    };
 
    function Controller( $scope, eventBus ) {
@@ -33,7 +33,7 @@ define( [
       // This is just to show how incremental updates can be generated:
       Object.keys( defaults ).forEach( function( key ) {
          $scope.$watch( 'model.' + key, function( newValue, previousValue ) {
-            if( newValue === previousValue  ) { return; }
+            if( previousValue === undefined ) { return; }
             eventBus.publish( 'didUpdate.' + resource, {
                resource: resource,
                patches: [ { op: 'replace', path: '/' + key, value: newValue } ]
