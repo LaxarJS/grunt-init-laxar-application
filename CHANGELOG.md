@@ -2,6 +2,9 @@
 
 ## Last Changes
 
+
+## v1.0.4
+
 - [#33](https://github.com/LaxarJS/grunt-init-laxar-application/issues/33): example widgets: added missing spec tests
 
 
