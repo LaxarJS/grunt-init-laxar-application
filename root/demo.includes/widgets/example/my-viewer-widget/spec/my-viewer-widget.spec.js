@@ -10,25 +10,82 @@ define( [
 
    describe( 'A MyViewerWidget', function() {
 
-      var testBed_;
+      var testBed;
 
       beforeEach( function setup() {
-         testBed_ = ax.testing.portalMocksAngular.createControllerTestBed( 'example/my-viewer-widget' );
-         testBed_.featuresMock = {};
-
-         testBed_.useWidgetJson();
-         testBed_.setup();
+         testBed = ax.testing.portalMocksAngular.createControllerTestBed( 'example/my-viewer-widget' );
+         testBed.featuresMock = {
+            document: {
+               resource: 'myDocument'
+            }
+         };
+         testBed.setup();
       } );
 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
       afterEach( function() {
-         testBed_.tearDown();
+         testBed.tearDown();
       } );
 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-      it( 'still needs some tests.' );
+      it( 'subscribes to (incremental) changes to its document resource', function() {
+
+         expect( testBed.scope.eventBus.subscribe ).toHaveBeenCalledWith(
+            'didReplace.myDocument',
+            jasmine.any( Function )
+         );
+
+         expect( testBed.scope.eventBus.subscribe ).toHaveBeenCalledWith(
+            'didUpdate.myDocument',
+            jasmine.any( Function )
+         );
+
+      } );
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+      describe( 'having received a document resource', function() {
+
+         beforeEach( function() {
+            testBed.eventBusMock.publish( 'didReplace.myDocument', {
+               resource: 'myDocument',
+               data: { htmlTitle: 'Title', htmlText: 'and text' }
+            } );
+            jasmine.Clock.tick( 0 );
+         } );
+
+         /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+         it( 'reflects the resource state', function() {
+            expect( testBed.scope.model ).toEqual( { htmlTitle: 'Title', htmlText: 'and text' } );
+         } );
+
+         /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+         describe( 'and subsequent updates', function() {
+
+            beforeEach( function() {
+               testBed.eventBusMock.publish( 'didUpdate.myDocument', {
+                  resource: 'myDocument',
+                  patches: [
+                     { op: 'replace', path : '/htmlTitle', value : 'Hey!' },
+                     { op: 'replace', path : '/htmlText', value : 'Ho!' }
+                  ]
+               } );
+               jasmine.Clock.tick( 0 );
+            } );
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////
+
+            it( 'reflects the updated resource state', function() {
+               expect( testBed.scope.model ).toEqual( { htmlTitle: 'Hey!', htmlText: 'Ho!' } );
+            } );
+
+         } );
+
+      } );
 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
