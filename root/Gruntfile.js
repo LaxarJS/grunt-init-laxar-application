@@ -208,6 +208,7 @@ module.exports = function( grunt ) {
          files: [
             artifact + '/!(bower_components|node_modules)',
             artifact + '/!(bower_components|node_modules)/**',
+            '!' + artifact + '/**/*.scss',
             '!' + artifact + '/test-results.xml'
          ]
       } );

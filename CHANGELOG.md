@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#34](https://github.com/LaxarJS/grunt-init-laxar-application/issues/34): Gruntfile: excluded widget SCSS from live reload
+
 
 ## v1.0.4
 
