@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#34](https://github.com/LaxarJS/grunt-init-laxar-application/issues/34): Gruntfile: excluded widget SCSS from live reload
 - [#33](https://github.com/LaxarJS/grunt-init-laxar-application/issues/33): example widgets: added missing spec tests
 - [#32](https://github.com/LaxarJS/grunt-init-laxar-application/issues/32): Gruntfile: fixed embedding of control descriptors into listings
 - [#31](https://github.com/LaxarJS/grunt-init-laxar-application/issues/31): added missing license
